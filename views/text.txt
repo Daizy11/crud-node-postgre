@@ -1,0 +1,6 @@
+ <td>
+                <button id="btn-delete7" class="btn-delete" hidden>
+                  Delete
+                </button>
+                <button id="btn-edit" class="btn-edit" hidden>Edit</button>
+              </td>

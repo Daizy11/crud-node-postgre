@@ -1,26 +1,22 @@
 const {  DataTypes } = require("sequelize");
-const sequelize = require("./sequelizeModel");
+const sequelize = require('./sequelizeModel')
 
 
 
-const Product = sequelize.define("ProductCategory", {
+const Product = sequelize.define("productCategory", {
   id: {
-    type: DataTypes.SERIAL,
+    type: DataTypes.INTEGER,
     allowNull: false,
+    primaryKey: true,
+    autoIncrement: true, 
   },
-  productCategoryID:{
-    type:DataTypes.string(10),
+  productCategory:{
+    type:DataTypes.STRING(10),
     allowNull: false,
   }
   // Define more fields here as needed
 });
 
-sequelize.sync()
-  .then(() => {
-    console.log('Database and tables synced.');
-  })
-  .catch(error => {
-    console.error('Error syncing database:', error);
-  });
 
-module.exports = { sequelize, Product };
+
+module.exports = Product 

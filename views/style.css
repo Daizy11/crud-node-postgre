@@ -51,14 +51,19 @@ input {
 }
 
 .table-wrapper {
-  width: 52rem;
+  width: 54rem;
   background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   height: 65vh;
   border-radius: 10px;
- 
+  position: relative;
 }
+#nav{
+ position: absolute;
+ margin-top: 200px;
+ margin-left: 650px;
 
+}
 .row-body {
   height: 30px;
 }
@@ -101,6 +106,9 @@ td {
 }
 #id {
   color: red;
+}
+th{
+  text-align: center;
 }
 
 .navbar{

@@ -2,34 +2,26 @@ const productScheme = require("../models/productModels");
 
 exports.getProduct = async (req, res) => {
   try {
-    const products = await productScheme.find(); // Retrieve all products from the database
+    const products = await productScheme.findAll(); // Retrieve all products from the database
     res.status(200).json({
       status: "success",
       data: products,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
-exports.createProduct = async (req, res) => {
-  const create = req.body;
-  try {
-    const newProduct = await productScheme.create(create); // Create a new product in the database
-    res.status(201).json({
-      status: "success",
-      data: newProduct,
-    });
-  } catch (error) {
-    console.error("Error creating product:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
 
 exports.createProduct = async (req, res) => {
   const create = req.body;
   try {
-    const newProduct = await productScheme. // Create a new product in the database
+    const newProduct = await productScheme.create({
+      id: req.body.id,
+      product: req.body.product,
+      productCategoryID: req.body.productCategoryID,
+    }); // Create a new product in the database
     res.status(201).json({
       status: "success",
       data: newProduct,
@@ -64,7 +56,7 @@ exports.updateMetode = async (req, res) => {
 
 exports.deleteMetode = async (req, res) => {
   const productId = req.params.id; // Extract the product ID from the URL parameter
-  console.log(productId)
+
   try {
     // Find the product by its ID
     const product = await productScheme.findByPk(productId);
@@ -83,5 +75,9 @@ exports.deleteMetode = async (req, res) => {
   }
 };
 
-
-
+// exports.pagination = async (req, res) => {
+//   const page = req.query.page * 1 || 1;
+//   const limit = req.query.limit * 1 || 100;
+//   const skip = (page - 1) * limit;
+//   await productScheme.findAll().skip(skip).limit(limit);
+// };

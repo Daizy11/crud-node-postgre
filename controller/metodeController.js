@@ -19,7 +19,7 @@ exports.createMetode = async (req, res) => {
  
   try {
     const newProduct = await metodeScheme.create({
-      id: req.body.id,
+     
       metodePembayaran: req.body.metodePembayaran,
     }); // Create a new product in the database
     res.status(201).json({
@@ -56,7 +56,7 @@ exports.updateMetode = async (req, res) => {
 
 exports.deleteMetode = async (req, res) => {
   const productId = req.params.id; // Extract the product ID from the URL parameter
-  console.log(productId);
+
   try {
     // Find the product by its ID
     const product = await metodeScheme.findByPk(productId);

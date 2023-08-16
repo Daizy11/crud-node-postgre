@@ -13,9 +13,8 @@ form.addEventListener("submit", async (e) => {
     jsonData[key] = value;
   });
 
-
   console.log(jsonData); //1
-  
+
   idVal++;
   document.getElementById("id").value = idVal;
 

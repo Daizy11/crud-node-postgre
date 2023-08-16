@@ -1,21 +1,25 @@
-const prodCatScheme = require("../models/productCatModels");
+const prodCatScheme = require('../models/productCatModels')
 
 exports.getProduct = async (req, res) => {
   try {
-    const products = await prodCatScheme.find(); // Retrieve all products from the database
+    const products = await prodCatScheme.findAll(); // Retrieve all products from the database
     res.status(200).json({
       status: "success",
       data: products,
     });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
+    console.error("Error getting product:", error);
   }
 };
 
 exports.createProduct = async (req, res) => {
-  const create = req.body;
+ console.log(req.body)
   try {
-    const newProduct = await prodCatScheme.create(create); // Create a new product in the database
+    const newProduct = await prodCatScheme.create({
+      id : req.body.id,
+      productCategory : req.body.productCategory
+    }); // Create a new product in the database
     res.status(201).json({
       status: "success",
       data: newProduct,
@@ -50,7 +54,7 @@ exports.updatePenjualan = async (req, res) => {
 
 exports.deletePenjualan = async (req, res) => {
   const productId = req.params.id; // Extract the product ID from the URL parameter
-  console.log(productId);
+ 
   try {
     // Find the product by its ID
     const product = await prodCatScheme.findByPk(productId);

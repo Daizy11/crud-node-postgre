@@ -21,7 +21,7 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
+   
   </head>
   <body>
     <div class="navbar">
@@ -37,27 +37,28 @@
         style="display: flex; flex-direction: column; width: 25%"
       >
         <h3>Edit</h3>
-        <% users.data.forEach((value,index)=>{ %>
+       
          
         <label for="">ID</label>
+        <% console.log(params) %>
         <input
           type="number"
           name="id"
           id="id"
           readonly
-          value="<%= value.id %>"
+          value="<%= params.id %>"
         />
         <label for="">Nama Product</label>
-        <input name="product" value="<%=  value.product %>" />
+        <input name="product" value="" />
         <label for="">Product Category ID</label>
         <input
           class="form-control"
           id="demo-2"
           name="productCategoryID"
           readonly
-          value="<%= value.productCategoryID %>"
+          value=""
         />
-        <% }) %>
+      
         <button id="btnSubmit" type="submit">Submit</button>
       </div>
     </form>

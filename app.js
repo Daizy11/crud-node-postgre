@@ -27,13 +27,19 @@ app.get("/add", (req, res) => {
     });
 });
 app.get("/product", (req, res) => {
-  fetch("http://127.0.0.1:3000/api/product", {
+  const page =parseInt( req.query.page) || 1;
+  const limit = req.query.limit || 5;
+
+  fetch(`http://127.0.0.1:3000/api/product?page=${page}&limit=${limit}`, {
     method: "GET",
   })
     .then((response) => response.json())
     .then((data) => {
       res.render("product", {
         users: data,
+        page:page,
+        totalPage:data.data.length,
+        limit,
       });
     });
 });
@@ -49,6 +55,7 @@ app.get("/edit/:id", (req, res) => {
     .then((data) => {
       res.render("edit_", {
         users: data,
+        params: req.params
       });
     });
 });

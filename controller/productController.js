@@ -1,8 +1,27 @@
 const productScheme = require("../models/productModels");
 
 exports.getProduct = async (req, res) => {
+  const { page, limit, sort, fields, ...filters } = req.query;
+
+  const parsedPage = parseInt(page) || 1;
+  const parsedLimit = parseInt(limit) || 10;
+  const offset = (parsedPage - 1) * parsedLimit;
+
+  const sequelizeFilters = Object.keys(filters).reduce((acc, key) => {
+    acc[key] = { [Op.like]: `%${filters[key]}%` };
+    return acc;
+  }, {});
+
+  const order = sort ? [sort.split(",")] : [["createdAt", "ASC"]];
+
   try {
-    const products = await productScheme.findAll(); // Retrieve all products from the database
+    const products = await productScheme.findAll({
+      where: sequelizeFilters,
+      order,
+      attributes: fields ? fields.split(",") : undefined,
+      offset,
+      limit: parsedLimit,
+    }); // Retrieve all products from the database
     res.status(200).json({
       status: "success",
       data: products,

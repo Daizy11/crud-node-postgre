@@ -17,7 +17,7 @@ form.addEventListener("submit", async (e) => {
 
   idVal++;
   document.getElementById("id").value = idVal;
-
+  showAlert("Form submitted!");
   await fetch("http://127.0.0.1:3000/api/product", {
     method: "POST",
     headers: {
@@ -29,3 +29,9 @@ form.addEventListener("submit", async (e) => {
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
 });
+
+function showAlert(message) {
+  const alertMessage = document.getElementById("alertMessage");
+  alertMessage.textContent = message;
+  alert(message); // Display an alert
+}

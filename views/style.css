@@ -1,5 +1,3 @@
-
-
 .input-buku {
   display: flex;
   flex-direction: column;
@@ -11,8 +9,8 @@
 .content-container {
   display: flex;
   gap: 5rem;
+  justify-content: center;
 }
-
 
 .form {
   display: flex;
@@ -31,9 +29,10 @@ input {
   justify-content: left;
   display: flex;
 }
-.table tr th, .table tr td {
-    /* border-color: #e9e9e9; */
-    border: 1px solid #e9e9e9 ;
+.table tr th,
+.table tr td {
+  /* border-color: #e9e9e9; */
+  border: 1px solid #e9e9e9;
 }
 
 .table th {
@@ -45,7 +44,7 @@ input {
 .table tr td {
   cursor: pointer;
   /* margin: 0 5px; */
-  min-width: 8rem;
+  min-width: 3rem;
 }
 
 .table th:last-child {
@@ -53,53 +52,92 @@ input {
 }
 
 .table-wrapper {
-  width: 52rem;
+  width: 55rem;
   background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  height: 65vh;
+  height: 80vh;
+  border-radius: 10px;
+  position: relative;
+  
+}
+#nav{
+ position: absolute;
+  
+
+}
+.row-body {
+  height: 30px;
+}
+
+.row {
+  border-bottom: 2px solid #e9e9e9;
+}
+
+button {
+  padding: 5px;
   border-radius: 10px;
 }
 
-.row-body{
-    height: 30px;
-}
-
-.row{
-    border-bottom: 2px solid #e9e9e9 ;
-}
-
-button{
-    padding:5px;
-    border-radius: 10px;
-}
-
-.btn-delete{
+.btn-delete {
   background-color: red;
+  padding: 3px;
 }
 
-.btn-edit{
+.btn-add {
+  background-color: blue;
+  color: White;
+}
+
+.btn-edit {
   background-color: green;
-}
-
-th, td {
-    border-left: none;
-    border-right: none;
-
-}
-.tampilan{
-    margin-left: 10px;
+  padding: 3px 5px  5px;
+  color: White;
 
 }
 
-.table{
-    text-align: center;
-    border-collapse: collapse;
-      line-height: 32px;
-        box-shadow: none;
-        border-radius: 2px;
-        margin-left: 10px;
-        table-layout: fixed;
+th,
+td {
+  border-left: none;
+  border-right: none;
 }
-#id{
-color: red;
+.tampilan {
+  margin-left: 10px;
+  padding: 4px;
+  display: flex;
+  
 }
+
+.table {
+  border-collapse: collapse;
+  line-height: 32px;
+  box-shadow: none;
+  border-radius: 2px;
+  /* margin-left: 10px; */
+  /* table-layout: fixed; */
+  /* margin-left: 120px; */
+
+}
+#id {
+  color: red;
+}
+th{
+  text-align: center;
+}
+
+.navbar{
+  display :flex;
+  list-style:none;
+  gap: 50px;
+  justify-content: right;
+  margin: 10px 30px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.action{
+  display: flex;
+  justify-content: center;
+}
+

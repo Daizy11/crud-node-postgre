@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud Toko Buku</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background: #f5f7fa; color: #404e67">
+    <div class="header">
+      <h2>Crud APP Toko Buku</h2>
+    </div>
+    <div class="content-container">
+      <div class="input-buku">
+        <h3>Form Tambah Buku</h3>
+        <form action="/api/v1/buku" method="post" class="form" id="form">
+          <label for="">No</label>
+          <input type="number" name="no" id="no" readonly value="1" />
+          <label for="">Judul Buku</label>
+          <input type="text" name="judul" id="judul" />
+          <label for="">Penerbit</label>
+          <input type="text" name="penerbit"  id="penerbit"/>
+          <label for="">Genre Buku</label>
+          <input type="text" name="genre"id="genre" />
+          <label for="">Harga Buku</label>
+          <input type="text" name="harga" id="harga" />
+          <button id="btnSubmit" type="submit">Tambah Buku</button>
+          <p id="demo"></p>
+        </form>
+       
+      </div>
+
+      <div class="table-wrapper">
+        <div class="tampilan">
+          <h3>Tabel Daftar Buku</h3>
+        </div>
+        <table class="table">
+          <thead>
+            <tr class="row">
+              <th>No</th>
+              <th>Judul Buku</th>
+              <th>Penerbit Buku</th>
+              <th>Genre Buku</th>
+              <th>Harga Buku</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-body" id="row1">
+              <td id="td1-1" ></td>
+              <td id="td1-2"></td>
+              <td id="td1-3"></td>
+              <td id="td1-4"></td>
+              <td id="td1-5"></td>
+              <td ><button id="btn-delete1" class="btn-delete"  hidden>Delete</button> <button id="btn-edit1"class="btn-edit" hidden>Edit</button></td>
+            </tr>
+            <tr class="row-body">
+              <td id="td2-1"></td>
+              <td id="td2-2"></td>
+              <td id="td2-3"></td>
+              <td id="td2-4"></td>
+              <td id="td2-5"></td>
+              <td ><button id="btn-delete2"class="btn-delete" hidden>Delete</button> <button id="btn-edit"class="btn-edit" hidden>Edit</button></td>
+            </tr> <tr class="row-body">
+              <td id="td3-1"></td>
+              <td id="td3-2"></td>
+              <td id="td3-3"></td>
+              <td id="td3-4"></td>
+              <td id="td3-5"></td>
+              <td ><button id="btn-delete3" class="btn-delete" hidden>Delete</button> <button id="btn-edit"class="btn-edit" hidden>Edit</button></td>
+            </tr> <tr class="row-body">
+              <td id="td4-1"></td>
+              <td id="td4-2"></td>
+              <td id="td4-3"></td>
+              <td id="td4-4"></td>
+              <td id="td4-5"></td>
+              <td ><button id="btn-delete4"class="btn-delete" hidden>Delete</button> <button id="btn-edit"class="btn-edit" hidden>Edit</button></td>
+            </tr> <tr class="row-body">
+              <td id="td5-1"></td>
+              <td id="td5-2"></td>
+              <td id="td5-3"></td>
+              <td id="td5-4"></td>
+              <td id="td5-"></td>
+              <td ><button id="btn-delete5"class="btn-delete" hidden>Delete</button> <button id="btn-edit"class="btn-edit" hidden>Edit</button></td>
+            </tr> <tr class="row-body">
+              <td id="td6"></td>
+              <td id="td6"></td>
+              <td id="td6"></td>
+              <td id="td6"></td>
+              <td id="td6"></td>
+              <td ><button id="btn-delete6"class="btn-delete" hidden>Delete</button> <button id="btn-edit"class="btn-edit" hidden>Edit</button></td>
+            </tr> <tr class="row-body">
+              <td id="td7"></td>
+              <td id="td7"></td>
+              <td id="td7"></td>
+              <td id="td7"></td>
+              <td id="td7"></td>
+              <td ><button id="btn-delete7"class="btn-delete" hidden>Delete</button> <button id="btn-edit"class="btn-edit" hidden>Edit</button></td>
+            </tr> <tr class="row-body">
+              <td id="td8"></td>
+              <td id="td8"></td>
+              <td id="td8"></td>
+              <td id="td8"></td>
+              <td id="td8"></td>
+              <td ><button id="btn-delete8"class="btn-delete" hidden>Delete</button> <button id="btn-edit"class="btn-edit" hidden>Edit</button></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./button.js"></script>
+  </body>
+</html>

@@ -21,10 +21,9 @@ app.get("/add", (req, res) => {
   })
     .then((response) => response.json())
     .then((data) => {
-     
       res.render("add", {
         users: data,
-        message:"User added successfully"
+        message: "User added successfully",
       });
     });
 });
@@ -42,15 +41,14 @@ app.get("/product", (req, res) => {
       })
         .then((response) => response.json())
         .then((data) => {
-         
           let b = 1;
-          for (let i = 1; i<= data2.data.length;i++){
-            if(i%5 ==0 ){
-              b = b+ 1
+          for (let i = 1; i <= data2.data.length; i++) {
+            if (i % 5 == 0) {
+              b = b + 1;
             }
           }
           // console.log(b)
-        
+
           res.render("product", {
             users: data,
             page: page,
@@ -59,7 +57,6 @@ app.get("/product", (req, res) => {
           });
         });
     });
- 
 });
 app.get("/productCat", (req, res) => {
   res.render("productCat");
@@ -75,6 +72,7 @@ app.get("/edit/:id", (req, res) => {
         users: data,
         params: req.params,
       });
+      
     });
 });
 
